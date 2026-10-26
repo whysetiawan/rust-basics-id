@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 2: Variables</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<div class="topbar">
+  <a href="../index.html">&larr; All lessons</a>
+  <button class="tr-all" type="button" data-tr-all>Show all Indonesian</button>
+</div>
+
+<h1>Lesson 2: Boxes with names</h1>
+<p class="sub" data-id="Baca bahasa Inggrisnya dulu. Tap ID kalau perlu bantuan.">Read the English first. Tap <b>ID</b> for help.</p>
+
+<p class="goal" data-id="Hari ini: kamu menyimpan data di dalam kotak, lalu menampilkannya.">Today: you keep data in a box, then show it.</p>
+
+<!-- ============ 1 ============ -->
+<h2 data-id="Apa itu variable?">What is a variable?</h2>
+<p data-id="Variable adalah kotak yang punya nama.">A variable is a box with a name.</p>
+<p data-id="Kamu menaruh sesuatu di dalam kotak. Nanti kamu memakainya lagi.">You put something in the box. Later, you use it again.</p>
+
+<svg viewBox="0 0 360 170" role="img" aria-label="Two boxes: player holds Messi, goals holds 3">
+  <rect x="20" y="40" width="140" height="90" rx="10" fill="none" style="stroke:var(--accent)" stroke-width="3"/>
+  <rect x="45" y="22" width="90" height="28" rx="6" style="fill:var(--accent)"/>
+  <text x="90" y="41" font-size="14" text-anchor="middle" style="fill:#fff" font-family="monospace">player</text>
+  <text x="90" y="98" font-size="20" text-anchor="middle" font-weight="700" font-family="monospace">"Messi"</text>
+  <rect x="200" y="40" width="140" height="90" rx="10" fill="none" style="stroke:var(--accent)" stroke-width="3"/>
+  <rect x="225" y="22" width="90" height="28" rx="6" style="fill:var(--accent)"/>
+  <text x="270" y="41" font-size="14" text-anchor="middle" style="fill:#fff" font-family="monospace">goals</text>
+  <text x="270" y="98" font-size="22" text-anchor="middle" font-weight="700" font-family="monospace">3</text>
+  <text x="90" y="156" font-size="12" text-anchor="middle" style="fill:var(--muted)">name: player</text>
+  <text x="270" y="156" font-size="12" text-anchor="middle" style="fill:var(--muted)">name: goals</text>
+</svg>
+
+<p data-id="Label = nama kotak. Isi = nilai (value).">The label is the <b>name</b>. The thing inside is the <b>value</b>.</p>
+
+<!-- ============ 2 ============ -->
+<h2 data-id="Membuat kotak dengan let">Make a box with let</h2>
+<pre><code>let player = "Messi";
+let goals = 3;</code></pre>
+<ul class="anatomy">
+  <li><code>let</code><span data-id="let = buat kotak baru.">let = make a new box.</span></li>
+  <li><code>player</code><span data-id="Nama kotaknya.">The name of the box.</span></li>
+  <li><code>=</code><span data-id="Taruh nilai ini di dalam kotak.">Put this value in the box.</span></li>
+  <li><code>"Messi"</code><span data-id="Teks perlu tanda kutip.">Text needs quotes.</span></li>
+  <li><code>3</code><span data-id="Angka tidak perlu tanda kutip.">Numbers do not need quotes.</span></li>
+</ul>
+
+<h3 data-id="Tampilkan isi kotak">Show what is in the box</h3>
+<p data-id="Tulis nama kotak di dalam { } di teksmu. Rust mengganti {player} dengan isinya.">Write the box name inside <code>{ }</code> in your text. Rust changes <code>{player}</code> to the value.</p>
+<pre><code>println!("{player} scored {goals} goals!");</code></pre>
+<div class="output">Messi scored 3 goals!</div>
+
+<!-- ============ 3 ============ -->
+<h2 data-id="Lihat programnya berjalan">Watch it run</h2>
+<p data-id="Tap Next. Lihat kotak-kotaknya muncul.">Tap <b>Next</b>. Watch the boxes appear.</p>
+
+<div class="card stepper" data-stepper>
+<script type="application/json">
+{
+  "code": [
+    "fn main() {",
+    "    let player = \"Messi\";",
+    "    let goals = 3;",
+    "    println!(\"{player} scored {goals} goals!\");",
+    "}"
+  ],
+  "steps": [
+    {"line": 0, "say": "The program starts at main. No boxes yet.", "say_id": "Program mulai di main. Belum ada kotak."},
+    {"line": 1, "boxes": {"player": "\"Messi\""}, "say": "let makes a box. Its name is player. Inside: \"Messi\".", "say_id": "let membuat kotak bernama player. Isinya: \"Messi\"."},
+    {"line": 2, "boxes": {"player": "\"Messi\"", "goals": "3"}, "say": "A second box. Its name is goals. Inside: 3.", "say_id": "Kotak kedua bernama goals. Isinya: 3."},
+    {"line": 3, "boxes": {"player": "\"Messi\"", "goals": "3"}, "print": "Messi scored 3 goals!", "say": "Rust looks in the boxes. {player} becomes Messi. {goals} becomes 3.", "say_id": "Rust melihat isi kotak. {player} jadi Messi. {goals} jadi 3."},
+    {"line": 4, "boxes": {"player": "\"Messi\"", "goals": "3"}, "say": "The end. Done!", "say_id": "Selesai!"}
+  ]
+}
+</script>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 data-id="Coba sendiri">Try it yourself</h2>
+<p data-id="Copy, buka Rustfinity, hapus kode lama, paste, lalu run.">Copy, open Rustfinity, delete the old code, paste, run.</p>
+<pre data-run><code>fn main() {
+    let player = "Messi";
+    let goals = 3;
+    println!("{player} scored {goals} goals!");
+}</code></pre>
+<div class="label">You should see</div>
+<div class="output">Messi scored 3 goals!</div>
+
+<h3 data-id="Pemanasan">Warm-up</h3>
+<p data-id="Ganti pemainnya dan jumlah golnya. Jalankan lagi.">Change the player and the number of goals. Run it again.</p>
+
+<!-- ============ 5 ============ -->
+<h2 data-id="Kotak yang bisa berubah: mut">A box that can change: mut</h2>
+<p data-id="Biasanya kotak di Rust terkunci. Isinya tidak bisa diganti.">Normally, a Rust box is locked. You cannot change the value.</p>
+<p data-id="Tambahkan mut supaya bisa diganti. mut = mutable = bisa berubah.">Add <code>mut</code> to change it. mut = <b>mutable</b> = can change.</p>
+
+<svg viewBox="0 0 360 140" role="img" aria-label="A locked box and an open box marked mut">
+  <rect x="20" y="40" width="130" height="80" rx="10" fill="none" style="stroke:var(--muted)" stroke-width="3"/>
+  <text x="85" y="28" font-size="14" text-anchor="middle" font-family="monospace">let hp</text>
+  <text x="85" y="88" font-size="22" text-anchor="middle" font-weight="700" font-family="monospace">100</text>
+  <rect x="68" y="102" width="34" height="22" rx="4" style="fill:var(--muted)"/>
+  <path d="M75 102 V94 a10 10 0 0 1 20 0 V102" fill="none" style="stroke:var(--muted)" stroke-width="3"/>
+  <text x="85" y="138" font-size="12" text-anchor="middle" style="fill:var(--muted)">locked</text>
+  <rect x="210" y="40" width="130" height="80" rx="10" fill="none" style="stroke:var(--accent)" stroke-width="3"/>
+  <text x="275" y="28" font-size="14" text-anchor="middle" font-family="monospace">let mut hp</text>
+  <text x="275" y="88" font-size="22" text-anchor="middle" font-weight="700" font-family="monospace">100 → 70</text>
+  <text x="275" y="138" font-size="12" text-anchor="middle" style="fill:var(--accent)">can change</text>
+</svg>
+
+<p data-id="Contoh: HP di game. Kamu kena serang, HP turun.">Example: HP in a game. An enemy hits you. Your HP goes down.</p>
+
+<div class="card stepper" data-stepper>
+<script type="application/json">
+{
+  "code": [
+    "fn main() {",
+    "    let mut hp = 100;",
+    "    println!(\"HP: {hp}\");",
+    "    hp = hp - 30;",
+    "    println!(\"Ouch! HP: {hp}\");",
+    "}"
+  ],
+  "steps": [
+    {"line": 0, "say": "Start.", "say_id": "Mulai."},
+    {"line": 1, "boxes": {"hp": "100"}, "say": "A box called hp. It has mut, so it can change.", "say_id": "Kotak bernama hp. Ada mut, jadi isinya bisa berubah."},
+    {"line": 2, "boxes": {"hp": "100"}, "print": "HP: 100", "say": "Show the HP.", "say_id": "Tampilkan HP."},
+    {"line": 3, "boxes": {"hp": "70"}, "say": "The enemy hits! Take 100, minus 30. Put 70 back in the box.", "say_id": "Musuh menyerang! Ambil 100, kurangi 30. Taruh 70 kembali di kotak."},
+    {"line": 4, "boxes": {"hp": "70"}, "print": "Ouch! HP: 70", "say": "Show the new HP.", "say_id": "Tampilkan HP yang baru."},
+    {"line": 5, "boxes": {"hp": "70"}, "say": "Done!", "say_id": "Selesai!"}
+  ]
+}
+</script>
+</div>
+
+<pre data-run><code>fn main() {
+    let mut hp = 100;
+    println!("HP: {hp}");
+    hp = hp - 30;
+    println!("Ouch! HP: {hp}");
+}</code></pre>
+
+<!-- ============ 6 ============ -->
+<h2 data-id="Baca pesan error">Read the error</h2>
+<p data-id="Kode ini tidak punya mut. Jalankan. Apa yang terjadi?">This code has no <code>mut</code>. Run it. What happens?</p>
+<pre data-run><code>fn main() {
+    let hp = 100;
+    hp = hp - 30;
+    println!("HP: {hp}");
+}</code></pre>
+<p data-id="Kamu akan melihat error seperti ini:">You see an error like this:</p>
+<div class="output err">error[E0384]: cannot assign twice to immutable variable `hp`</div>
+<table class="words">
+  <tr><th>English</th><th>Indonesia</th></tr>
+  <tr><td>cannot</td><td>tidak bisa</td></tr>
+  <tr><td>assign</td><td>memberi nilai (menaruh isi di kotak)</td></tr>
+  <tr><td>twice</td><td>dua kali</td></tr>
+  <tr><td>immutable</td><td>tidak bisa berubah (im = tidak)</td></tr>
+</table>
+<p data-id="Artinya: kamu tidak bisa mengisi kotak hp dua kali, karena kotaknya terkunci. Perbaikan: let mut hp.">Meaning: you cannot fill the box <code>hp</code> two times. It is locked. Fix: <code>let mut hp</code>.</p>
+
+<!-- ============ 7 ============ -->
+<h2 data-id="Tantangan">Challenge</h2>
+<p data-id="Kekuatan Goku mulai dari 9000. Dia berlatih dan dapat tambahan 1. Tampilkan dua baris ini:">Goku's power starts at 9000. He trains and gets 1 more. Show these 2 lines:</p>
+<div class="output">Power: 9000
+It's over 9000! Power: 9001</div>
+<p data-id="Ganti ___ supaya hasilnya sama.">Change the <code>___</code> so the result is the same.</p>
+<pre data-run><code>fn main() {
+    let ___ power = 9000;
+    println!("Power: {power}");
+    power = power + ___;
+    println!("It's over 9000! Power: {___}");
+}</code></pre>
+<details>
+  <summary data-id="Petunjuk">Hint</summary>
+  <p data-id="Kotaknya berubah. Kata apa yang membuat kotak bisa berubah?">The box changes. Which word lets a box change?</p>
+</details>
+<details>
+  <summary data-id="Lihat jawaban">See the answer</summary>
+<pre><code>fn main() {
+    let mut power = 9000;
+    println!("Power: {power}");
+    power = power + 1;
+    println!("It's over 9000! Power: {power}");
+}</code></pre>
+</details>
+
+<!-- ============ 8 ============ -->
+<h2 data-id="Kata baru">New words</h2>
+<table class="words">
+  <tr><th>English</th><th>Indonesia</th><th>Example</th></tr>
+  <tr><td>variable</td><td>variabel (kotak bernama)</td><td>hp is a variable.</td></tr>
+  <tr><td>value</td><td>nilai / isi</td><td>The value is 100.</td></tr>
+  <tr><td>name</td><td>nama</td><td>The name is player.</td></tr>
+  <tr><td>change</td><td>ubah / berubah</td><td>My HP changes.</td></tr>
+  <tr><td>locked</td><td>terkunci</td><td>The box is locked.</td></tr>
+  <tr><td>score</td><td>mencetak (gol) / skor</td><td>He scored 3 goals.</td></tr>
+  <tr><td>train</td><td>berlatih</td><td>Goku trains every day.</td></tr>
+  <tr><td>enemy</td><td>musuh</td><td>The enemy hits you.</td></tr>
+</table>
+
+<!-- ============ 9 ============ -->
+<h2 data-id="Kuis">Quiz</h2>
+<div data-quiz data-lesson="0002">
+<script type="application/json">
+[
+  {"q": "What is a variable?", "q_id": "Apa itu variable?",
+   "options": ["A box with a name", "A line on the screen", "The end of a step", "A type of error"],
+   "answer": 0, "why": "A variable keeps a value under a name.", "why_id": "Variable menyimpan nilai dengan sebuah nama."},
+  {"q": "Which word makes a new box?", "q_id": "Kata apa yang membuat kotak baru?",
+   "options": ["fn", "println!", "let", "main"],
+   "answer": 2, "why": "let makes a new variable.", "why_id": "let membuat variable baru."},
+  {"q": "let name = \"Naruto\"; What does {name} show?", "q_id": "let name = \"Naruto\"; {name} menampilkan apa?",
+   "options": ["name", "{name}", "\"name\"", "Naruto"],
+   "answer": 3, "why": "Rust puts the value of the box in the text.", "why_id": "Rust memasukkan isi kotak ke dalam teks."},
+  {"q": "You want to change a box later. What do you add?", "q_id": "Kamu mau mengubah isi kotak nanti. Apa yang kamu tambahkan?",
+   "options": ["Quotes", "mut", "A second ;", "!"],
+   "answer": 1, "why": "mut = mutable = can change.", "why_id": "mut = mutable = bisa berubah."},
+  {"q": "\"cannot assign twice to immutable variable\". What is the fix?", "q_id": "\"cannot assign twice to immutable variable\". Apa perbaikannya?",
+   "options": ["Delete println!", "Add mut after let", "Add quotes to 100", "Change main to fn"],
+   "answer": 1, "why": "The box is locked. mut unlocks it.", "why_id": "Kotaknya terkunci. mut membukanya."}
+]
+</script>
+</div>
+
+<div class="next">
+  <a href="0001-hello-rust.html">&larr; Lesson 1</a>
+  <a href="../index.html">All lessons &rarr;</a>
+</div>
+</main>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

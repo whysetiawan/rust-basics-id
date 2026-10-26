@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 1: Hello, Rust</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<div class="topbar">
+  <a href="../index.html">&larr; All lessons</a>
+  <button class="tr-all" type="button" data-tr-all>Show all Indonesian</button>
+</div>
+
+<h1>Lesson 1: Hello, Rust!</h1>
+<p class="sub" data-id="Tap tombol ID kalau kamu tidak paham kalimatnya. Coba baca bahasa Inggrisnya dulu.">Tap <b>ID</b> if you do not understand a sentence. Read the English first.</p>
+
+<p class="goal" data-id="Hari ini: kamu membuat komputer mengucapkan kata-katamu.">Today: you make the computer say your words.</p>
+
+<!-- ============ 1 ============ -->
+<h2 data-id="Apa itu program?">What is a program?</h2>
+<p data-id="Program adalah daftar langkah.">A program is a list of steps.</p>
+<p data-id="Komputer menjalankan langkah-langkahnya, dari atas ke bawah.">The computer does the steps, from top to bottom.</p>
+
+<svg viewBox="0 0 360 250" role="img" aria-label="Steps go down one by one, then the screen shows text">
+  <rect x="10" y="10" width="190" height="44" rx="8" fill="none" stroke="currentColor" style="stroke:var(--accent)" stroke-width="2"/>
+  <text x="22" y="38" font-size="15">Step 1: say "Hello!"</text>
+  <rect x="10" y="96" width="190" height="44" rx="8" fill="none" style="stroke:var(--accent)" stroke-width="2"/>
+  <text x="22" y="124" font-size="15">Step 2: say "I am Luffy"</text>
+  <rect x="10" y="182" width="190" height="44" rx="8" fill="none" style="stroke:var(--accent)" stroke-width="2"/>
+  <text x="22" y="210" font-size="15">Step 3: say "Bye!"</text>
+  <path d="M105 56 V92 M98 84 L105 93 L112 84" fill="none" style="stroke:var(--muted)" stroke-width="2"/>
+  <path d="M105 142 V178 M98 170 L105 179 L112 170" fill="none" style="stroke:var(--muted)" stroke-width="2"/>
+  <text x="80" y="80" font-size="11" style="fill:var(--muted)">next</text>
+  <text x="80" y="166" font-size="11" style="fill:var(--muted)">next</text>
+  <rect x="222" y="70" width="128" height="110" rx="10" fill="#111"/>
+  <text x="234" y="100" font-size="13" style="fill:#d9f7d0" font-family="monospace">Hello!</text>
+  <text x="234" y="124" font-size="13" style="fill:#d9f7d0" font-family="monospace">I am Luffy</text>
+  <text x="234" y="148" font-size="13" style="fill:#d9f7d0" font-family="monospace">Bye!</text>
+  <text x="252" y="198" font-size="12" style="fill:var(--muted)">the screen</text>
+</svg>
+
+<p data-id="Seperti resep masakan. Langkah 1, lalu langkah 2, lalu langkah 3.">Like a cooking recipe. Step 1, then step 2, then step 3.</p>
+
+<!-- ============ 2 ============ -->
+<h2 data-id="Program Rust pertamamu">Your first Rust program</h2>
+<pre><code>fn main() {
+    println!("Hello, world!");
+}</code></pre>
+<p data-id="Kelihatannya aneh. Tidak apa-apa. Ayo lihat setiap bagian.">It looks strange. That is OK. Let us look at each part.</p>
+
+<ul class="anatomy">
+  <li><code>fn</code><span data-id="fn = function (fungsi). Sebuah kelompok langkah yang punya nama.">fn = function. A group of steps with a name.</span></li>
+  <li><code>main</code><span data-id="main = utama. Rust selalu mulai dari sini.">main = the start. Rust always starts here.</span></li>
+  <li><code>{ }</code><span data-id="Kurung kurawal. Langkah-langkah ada di dalamnya. { = buka, } = tutup.">Curly brackets. The steps go inside. { = open, } = close.</span></li>
+  <li><code>println!</code><span data-id="print line = cetak satu baris. Menampilkan teks di layar.">print line. It shows text on the screen.</span></li>
+  <li><code>"..."</code><span data-id="Tanda kutip. Teks kamu ada di antara tanda kutip.">Quotes. Your text goes between the quotes.</span></li>
+  <li><code>;</code><span data-id="Titik koma. Akhir dari satu langkah. Seperti titik di akhir kalimat.">Semicolon. The end of one step. Like a full stop.</span></li>
+</ul>
+
+<!-- ============ 3 ============ -->
+<h2 data-id="Lihat programnya berjalan">Watch it run</h2>
+<p data-id="Tap Next. Lihat baris yang kuning dan layarnya.">Tap <b>Next</b>. Watch the yellow line and the screen.</p>
+
+<div class="card stepper" data-stepper>
+<script type="application/json">
+{
+  "code": [
+    "fn main() {",
+    "    println!(\"Hello!\");",
+    "    println!(\"My name is Luffy.\");",
+    "    println!(\"I will be King of the Pirates!\");",
+    "}"
+  ],
+  "steps": [
+    {"line": 0, "say": "Rust finds main. The program starts here.", "say_id": "Rust mencari main. Program mulai dari sini."},
+    {"line": 1, "print": "Hello!", "say": "Step 1. println! shows Hello! on the screen.", "say_id": "Langkah 1. println! menampilkan Hello! di layar."},
+    {"line": 2, "print": "My name is Luffy.", "say": "Step 2. A new line appears under the first one.", "say_id": "Langkah 2. Baris baru muncul di bawah baris pertama."},
+    {"line": 3, "print": "I will be King of the Pirates!", "say": "Step 3. One more line.", "say_id": "Langkah 3. Satu baris lagi."},
+    {"line": 4, "say": "The } closes main. The program ends. Done!", "say_id": "Tanda } menutup main. Program selesai."}
+  ]
+}
+</script>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 data-id="Coba sendiri">Try it yourself</h2>
+<ol class="steps">
+  <li data-id="Tap Copy.">Tap <b>Copy</b>.</li>
+  <li data-id="Tap Open Rustfinity. Halaman baru terbuka.">Tap <b>Open Rustfinity</b>. A new page opens.</li>
+  <li data-id="Hapus semua kode yang lama di sana.">Delete all the old code there.</li>
+  <li data-id="Tempel (paste) kodemu.">Paste your code.</li>
+  <li data-id="Tap run. Lihat hasilnya di bawah.">Tap <b>run</b>. Look at the result.</li>
+</ol>
+
+<pre data-run><code>fn main() {
+    println!("Hello!");
+    println!("My name is Luffy.");
+    println!("I will be King of the Pirates!");
+}</code></pre>
+
+<div class="label">You should see</div>
+<div class="output">Hello!
+My name is Luffy.
+I will be King of the Pirates!</div>
+
+<p class="note" data-id="Rustfinity tidak mau terbuka? Pakai tombol Backup. Kodenya sudah siap di sana. Tap Run.">Rustfinity does not work? Use the <b>Backup</b> button. The code is ready there. Tap <b>Run</b>.</p>
+
+<!-- ============ 5 ============ -->
+<h2 data-id="Pemanasan">Warm-up</h2>
+<p data-id="Ganti Luffy dengan namamu. Jalankan lagi.">Change <code>Luffy</code> to your name. Run it again.</p>
+<details>
+  <summary data-id="Lihat contoh">See an example</summary>
+<pre><code>fn main() {
+    println!("Hello!");
+    println!("My name is Raka.");
+    println!("I will be King of the Pirates!");
+}</code></pre>
+</details>
+
+<!-- ============ 6 ============ -->
+<h2 data-id="Tantangan">Challenge</h2>
+<p data-id="Buat program yang menampilkan 3 baris ini. Pakai pemain sepak bola favoritmu.">Make a program that shows these 3 lines. Use your favorite football player.</p>
+<div class="output">My favorite player is Messi.
+He plays for Inter Miami.
+He is the GOAT!</div>
+<p data-id="Mulai dari kode ini. Ganti ___ dengan teksmu.">Start with this code. Change <code>___</code> to your text.</p>
+<pre data-run><code>fn main() {
+    println!("My favorite player is ___.");
+    println!("___");
+    println!("___");
+}</code></pre>
+<details>
+  <summary data-id="Lihat jawaban">See the answer</summary>
+<pre><code>fn main() {
+    println!("My favorite player is Messi.");
+    println!("He plays for Inter Miami.");
+    println!("He is the GOAT!");
+}</code></pre>
+<p data-id="GOAT = Greatest Of All Time = yang terhebat sepanjang masa.">GOAT = Greatest Of All Time.</p>
+</details>
+
+<!-- ============ 7 ============ -->
+<h2 data-id="Baca pesan error">Read the error</h2>
+<p data-id="Programmer sering membuat kesalahan. Itu normal.">Programmers make mistakes all the time. It is normal.</p>
+<p data-id="Rust memberi tahu kesalahannya dalam bahasa Inggris. Dia guru bahasa Inggris gratis!">Rust tells you the mistake in English. It is a free English teacher!</p>
+<p data-id="Kode ini tidak punya tanda ! setelah println. Jalankan.">This code has no <code>!</code> after <code>println</code>. Run it.</p>
+<pre data-run><code>fn main() {
+    println("Hello!");
+}</code></pre>
+<p data-id="Kamu akan melihat error seperti ini (bisa ada baris lain juga):">You see an error like this (maybe with more lines):</p>
+<div class="output err">error[E0423]: expected function, found macro `println`</div>
+<table class="words">
+  <tr><th>English</th><th>Indonesia</th></tr>
+  <tr><td>error</td><td>kesalahan</td></tr>
+  <tr><td>expected</td><td>yang diharapkan / seharusnya</td></tr>
+  <tr><td>found</td><td>yang ditemukan</td></tr>
+  <tr><td>macro</td><td>perintah khusus Rust, namanya selalu pakai <code>!</code></td></tr>
+</table>
+<p data-id="Artinya: Rust mengharapkan function, tapi menemukan macro. Perbaikan: tambahkan ! seperti ini println!">Meaning: Rust expected a function, but found a macro. Fix: add <code>!</code> like this: <code>println!</code></p>
+
+<!-- ============ 8 ============ -->
+<h2 data-id="Kata baru">New words</h2>
+<table class="words">
+  <tr><th>English</th><th>Indonesia</th><th>Example</th></tr>
+  <tr><td>program</td><td>program</td><td>I write a program.</td></tr>
+  <tr><td>step</td><td>langkah</td><td>Step 1, step 2.</td></tr>
+  <tr><td>print</td><td>cetak / tampilkan</td><td>Print my name.</td></tr>
+  <tr><td>line</td><td>baris</td><td>One line of text.</td></tr>
+  <tr><td>screen</td><td>layar</td><td>Look at the screen.</td></tr>
+  <tr><td>run</td><td>jalankan</td><td>Run the code.</td></tr>
+  <tr><td>copy / paste</td><td>salin / tempel</td><td>Copy, then paste.</td></tr>
+  <tr><td>mistake</td><td>kesalahan</td><td>It is OK to make mistakes.</td></tr>
+</table>
+
+<!-- ============ 9 ============ -->
+<h2 data-id="Kuis">Quiz</h2>
+<div data-quiz data-lesson="0001">
+<script type="application/json">
+[
+  {"q": "Where does a Rust program start?", "q_id": "Program Rust mulai dari mana?",
+   "options": ["At fn main", "At println!", "At the last }", "At the first ;"],
+   "answer": 0, "why": "Rust always starts at main.", "why_id": "Rust selalu mulai di main."},
+  {"q": "What does println! do?", "q_id": "Apa yang dilakukan println!?",
+   "options": ["Deletes a line", "Shows a line of text", "Closes the program", "Makes a new main"],
+   "answer": 1, "why": "print line = show one line on the screen.", "why_id": "print line = tampilkan satu baris di layar."},
+  {"q": "Where does your text go?", "q_id": "Teksmu ditulis di mana?",
+   "options": ["After the ;", "Before fn", "Between the quotes \" \"", "Outside the { }"],
+   "answer": 2, "why": "Text goes between the quotes.", "why_id": "Teks ditulis di antara tanda kutip."},
+  {"q": "The computer does the steps in which order?", "q_id": "Komputer menjalankan langkah dengan urutan apa?",
+   "options": ["Random order", "Bottom to top", "Longest step first", "Top to bottom"],
+   "answer": 3, "why": "Top to bottom, one step at a time.", "why_id": "Dari atas ke bawah, satu langkah setiap kali."},
+  {"q": "Error: \"expected function, found macro\". What is missing?", "q_id": "Error: \"expected function, found macro\". Apa yang kurang?",
+   "options": ["The ! after println", "The word main", "A second line", "The word Hello"],
+   "answer": 0, "why": "println is a macro. A macro needs !", "why_id": "println adalah macro. Macro perlu tanda !"}
+]
+</script>
+</div>
+
+<div class="next">
+  <a href="../index.html">&larr; All lessons</a>
+  <a href="0002-variables.html">Lesson 2 &rarr;</a>
+</div>
+</main>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>
